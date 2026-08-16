@@ -1,3 +1,5 @@
+Warning: This repository has been modified for personal use within a local area network (LAN)!!
+
 # Bitwarden Android
 
 ## Contents
