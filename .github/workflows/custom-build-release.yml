@@ -13,6 +13,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_ACTOR: ${{ github.actor }}
+      GITHUB_TOKEN: ${{ secrets.BW_GITHUB_PAT }}
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -30,6 +33,7 @@ jobs:
       - name: Create user.properties
         run: |
           cat > user.properties <<EOF
+          gitHubUser=${{ github.actor }}
           gitHubToken=${{ secrets.BW_GITHUB_PAT }}
           localSdk=false
           EOF

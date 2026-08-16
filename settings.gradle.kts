@@ -29,7 +29,7 @@ dependencyResolutionManagement {
             name = "GitHubPackages (Bitwarden)"
             url = uri("https://maven.pkg.github.com/bitwarden/sdk")
             credentials {
-                username = ""
+                username = userProperties["gitHubUser"] as String? ?: System.getenv("GITHUB_ACTOR")
                 password = userProperties["gitHubToken"] as String? ?: System.getenv("GITHUB_TOKEN")
             }
         }
