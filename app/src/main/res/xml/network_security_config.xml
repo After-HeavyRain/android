@@ -12,6 +12,15 @@
         </trust-anchors>
     </base-config>
 
+    <!-- ============ 新增：仅内网vault.lan域名信任内置自签根CA ============ -->
+    <domain-config>
+        <domain includeSubdomains="true">frp-ski.com</domain>
+        <trust-anchors>
+            <!--打包进APK的自签根证书，仅这个域名使用-->
+            <certificates src="@raw/Home_Lab.pem"/>
+        </trust-anchors>
+    </domain-config>
+
     <!-- A lot of TLS certificates point to http:// URLs for CRL and OCSP checking,
     so we need to allow cleartext traffic on them -->
     <domain-config cleartextTrafficPermitted="true">
