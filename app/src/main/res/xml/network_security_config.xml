@@ -17,7 +17,7 @@
         <domain includeSubdomains="true">frp-ski.com</domain>
         <trust-anchors>
             <!--打包进APK的自签根证书，仅这个域名使用-->
-            <certificates src="@raw/Home_Lab.pem"/>
+            <certificates src="@raw/home_lab.pem"/>
         </trust-anchors>
     </domain-config>
 
